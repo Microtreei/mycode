@@ -1,0 +1,25 @@
+---继承
+    class Animal:
+        def eat(self):
+            pass
+        def sleep(self):
+            pass
+
+    单继承
+    class Dog(Animal):
+        pass
+
+---方法的重写
+    定义一个重名的函数即可
+    如再定义
+    def eat(self):
+        print('....')
+
+
+---父类方法的拓展          使用supper().这个特殊的类建立临时对象  调用父类的方法
+          ---1. def eat(self):
+                supper().eat()
+                print('---')
+
+          ---2. def eat(self):
+                    Dog.eat()           直接调用父类的方法

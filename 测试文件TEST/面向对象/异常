@@ -1,0 +1,14 @@
+try:
+    pass
+except (错误类型)
+    pass
+except(错误类型1，错误类型2)
+    pass
+
+except Exception as result:
+    print("未知错误%s"%result)
+
+else：       没有异常执行的代码
+    pass
+finally：        有没有异常都执行的代码
+    pass

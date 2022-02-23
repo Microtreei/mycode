@@ -1,0 +1,42 @@
+-----csv文件
+np.savetxt(frame,array,fmt,delimiter)
+frame   文件名
+array   数组
+fmt     格式
+delimiter   分割符
+
+np.savetxt('./txt',a1,delimiter=','
+headers='英语，数学'，comments='',fmt=%d，skiprows 跳过前面多少行)
+
+
+读取csv文件
+import csv
+with open（路径，读写方式） as fp：
+    next(reader)  到下一行  跳过header
+    reader = csv.reader(fp)
+
+with open（路径，读写方式） as fp：
+    reader = csv.DictReader（fp）字典方式
+
+
+
+写入csv文件     header 表示标题
+with open（路径，读写方式，encoding=’utf-8‘，newline = ’\n‘） as fp：
+    writer = csv.writer(fp)
+    writer.writerow(headers) 把header读入
+    writer.writerows(value)   把所有写入
+
+
+   字典写入
+with open（路径，读写方式，encoding=’utf-8‘，newline = ’\n‘） as fp：
+    writer = csv.DictReader（fp,header）字典方式
+    writer.writeheader()
+    writer.writerows(value)     value 为字典
+
+
+
+
+
+
+
+

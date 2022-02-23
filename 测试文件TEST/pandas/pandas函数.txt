@@ -1,0 +1,36 @@
+-···排序
+···索引排序
+s1.sort_index()
+s1.sort_index(ascending =False)
+
+按行排
+frame=sort_index(axis =0)
+按列排
+frame=sort_index(axis =1)
+
+
+···值排序
+s1.sort_value() nan默认排在最后
+
+frame=sort_value(by = 'A')
+
+
+3.唯一值和成员属性
+s1.unique()       去重 把重复去除掉， 返回不重复的一个数组
+s1.value_counts()       返回一个series  计算值出现个数
+s1.isin([8，2])        判断8,2是否在s1中   返回Ture False
+
+frame.isin([2])
+unique,value_counts同理  要指定列或行
+
+
+
+4.处理缺失数据
+··1.判断缺失数据
+frame.isnull()
+``2.丢弃缺失数据      默认丢弃行
+frame.dropna()
+frame.dropna(axis=1)    丢弃列
+···3.填充缺失数据
+frame.fillna(100.)
+

@@ -1,0 +1,21 @@
+1.垂直条形图的绘制
+plt.bar()
+movie为字典
+x = list(movie.key)
+y = list(movie.value)
+plt.bar(x,y,width=0.2,color=)
+plt.xtick(frotproperties=font,size=12)
+
+
+2.横向条形图
+plt.barh
+
+
+3.分组
+
+4.堆叠
+plt.bar(groupname,menscore)
+plt.bar(groupname,womanscore,bottoms=menscore)      从menscore分数开始绘制
+图例
+plt.bar(groupname,menscore，label=‘男性得分’)
+plt.legend(prop=font)

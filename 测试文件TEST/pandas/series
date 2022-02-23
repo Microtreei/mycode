@@ -1,0 +1,35 @@
+----Series
+index    element
+ 0          1
+ 1          2
+ 2          3
+index 自动创建
+
+----Series创建
+import pandas as pd
+
+----1.list 列表创建
+s1 = pd.Series([1,2,3])
+ 0          1
+ 1          2
+ 2          3
+
+-----2.numpy array数组创建
+s2 = pd.Series(np.arange(0,6))
+
+
+----指定索引
+s2 = pd.Series(np.arange(0,6)，index=['a','b','c','d','e'])
+ a          1
+ b          2
+ c          3
+ d          4
+ e          5
+
+---s1.value  ->返回值
+---s1.index
+
+
+-------3.通过字典创建
+dict = {'name':"李明"，'age':18}
+s3 = pd.Series(dict)

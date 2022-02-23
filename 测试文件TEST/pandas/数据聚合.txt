@@ -1,0 +1,20 @@
+1.分组
+df1.groupby(by='fruit') 根据水果列名分组
+数据块的集合
+df1.groupby(by='fruit')['apple']    选取模块
+
+
+2.聚合
+df1.groupby('fruit')['price'].mean()
+
+语法糖写法
+df1['price'].groupby(df1['fruit']).mean()
+
+df1.groupby('fruit'，as_index=False)['price'].mean() 显示为dataframe
+
+因为根据两个筛选，所以层次化索引
+df1.groupby(['fruit','color'])['price'].mean()
+
+
+
+

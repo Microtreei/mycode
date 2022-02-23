@@ -1,0 +1,15 @@
+----常用操作
+a1 = np.array([1,2,3,4])
+----np.ndim   查看维度
+a1.ndim
+
+----np.shape  几行几列
+a1.shape
+
+----np.reshape()
+a1.reshape((2,2))    数据个数要相同   自定义变形为几行几列
+（4，） 一维数组表示法
+
+
+-----np.size    数据个数
+-----np.itemsize  单个所占字节    相乘为所占内存

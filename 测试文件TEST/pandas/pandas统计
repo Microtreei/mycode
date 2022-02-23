@@ -1,0 +1,14 @@
+1.sum
+默认按列求和
+df.sum()
+
+按行求
+df.sum(axis=1)
+
+2.最大值索引
+sum.idxmax()
+
+df.cumsum   累计求和
+
+df.describe()       返回汇总统计  有var，mean，max，min等
+

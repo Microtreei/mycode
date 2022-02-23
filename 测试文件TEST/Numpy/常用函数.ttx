@@ -1,0 +1,29 @@
+np.sum（array,axis）
+np.prod         求积
+np.mean         平均值
+np.var          方差
+np.std      标准差
+min
+max
+argmin
+argmax      最大值索引
+median  中位数
+
+
+np.any()        存在
+np.all()        任一
+
+
+排序
+np.sort(a,axis=)
+
+降序1.
+-np.sort(-a)
+2.
+indexes = np.argsort(a)     argsort  有返回值下标
+np.take(a,indexes)   take  从指定下标取值
+
+分成多少份
+np.linspace(0,10,12)   把【0,10】分成12份
+
+np.unique(a，return_counts=True)     返回唯一值      不重复

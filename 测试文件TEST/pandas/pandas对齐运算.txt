@@ -1,0 +1,19 @@
+1.算数运算和数据对齐
+s1 = pd.Series(np.arange(4),index=['a','b','c','d'])
+s2 = pd.Series(np.arange(5),index=['a','f','g','h',d])
+s1+s2   是个并集    相同相加    其他nan
+
+frame1 =pd.DataFrame(np.arange(12).reshape(4,3),index=['a','b','c','d'],columns=['A','B','C'])
+frame2 =pd.DataFrame(np.arange(9).reshape(3,3),index=['a','d','f'],columns=['A','B','D'])
+相同（行列标签相同）标签相加  其他nan
+
+2.使用填充值的算数方法
+s1.add(s2,full_value=0)     用0填充nan相加
+frame1.add(frame,full_value=0)
+
+radd  /rsub  反转参数 被除数和除数翻转等
+
+3.dataframe和series混合运算
+与numpy广播差不多 多行与一行
+
+

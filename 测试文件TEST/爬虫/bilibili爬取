@@ -1,0 +1,10 @@
+爬取弹幕信息
+哔哩哔哩提供的弹幕接口为
+https://api.bilibili.com/x/v1/dm/list.so?oid=<视频的cid>，
+我们只需要将oid=后面的cid填写进去，就可以得到保存cid对应视频的弹幕的XML。
+
+那么cid该如何获取呢？
+很简单，按下F12键，选择“网络”（有些浏览器是“Network”），
+点击刷新，在搜索框中输入heartbeat，
+并播放视频。当“名称”一栏中出现heartbeat时，暂停视频，
+点击heartbeat，即可在其中的“表单数据”中找到视频的cid。

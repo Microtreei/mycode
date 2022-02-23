@@ -1,0 +1,36 @@
+使用步骤
+1）通过jieba库的分词功能将目标文本中的内容进行分词；
+2）利用wordcloud库函数功能将这些词语生成默认以空格或标点分割的词云文本；
+3）根据词语出现的频率高低给予不同的大小和颜色并显示。
+
+wordcloud库中的主要参数
+font_path 一> 指定字体文件的完整路径，默认None
+width 一> 生成图片宽度，默认400像素
+height 一> 生成图片高度，默认200像素
+mask 一> 词云形状，默认None，即方形图
+min_font_size 一> 词云中最小的字号，默认4号
+max_font_size 一> 词云中最大的字号，默认None，随高度自动调节
+font_step 一> 字号步进间隔，默认1
+max_words 一> 词云中最大词数，默认200
+stopwords 一> 被排除词列表
+background_color 一> 图片背景颜色，默认black
+
+wordcloud库中的主要方法
+generate(text)
+text文本生成词云（text是有空格或标点分割的文本）
+
+to_file(filename)
+词云保存至filename文件（路径+文件名.png）
+
+import jieba
+from wordcloud import WordCloud
+
+str1='大数据人工智能时代的到来必将引起各行各业的转型，克拉欧德将依托数据交易平台，大数据采集处理分析的技术优势，秉承"以客户需求为中心"的服务理念，成为你身边的大数据人工智能专家！'
+
+jieba.add_word('克拉欧德')
+jieba.add_word('大数据')
+list1=jieba.lcut(str1)
+list2=' '.join(list1)   #用空格连接词语
+print(list2)
+wordcloud_str=WordCloud(font_path='C:\Windows\Fonts\STZHONGS.ttf',background_color='white',width=500,height=365,margin=2).generate(list2)  #设置参数，生成词云
+wordcloud_str.to_file('词云结果案例效果.png')  #保存词云图

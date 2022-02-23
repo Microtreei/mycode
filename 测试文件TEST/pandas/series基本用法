@@ -1,0 +1,28 @@
+----判断是否为nan，是返回True
+s3.isnull()
+s3.notnull()
+
+
+-----通过索引返回值
+s3.index
+s3.value
+--下标
+s3[0]
+--标签名
+s3['age']
+---选取多个
+s3[1,3]
+s3['age','name']
+----切片选取
+s3[1:3]
+s3['name':'age']    两边都会取到  左右都闭
+---布尔索引
+s2[s2>3]
+
+
+---name属性
+s2.name='type'      对象名
+s2.index.name='year'    对象索引名
+
+---s2.head()    取到前五行数据
+---s2.tail(3)

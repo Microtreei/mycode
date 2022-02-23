@@ -1,0 +1,49 @@
+---------字典类构造
+------字典 包含 列表 元组 数组
+dict ={'a':[1,2,3,4],
+        'b':(,5,6,7,8)
+         'c':np.arange(9,13)
+}
+data = pd.DataFrame(dict)
+--查看行列索引
+data.index
+data.column
+--查看值
+data.value
+
+----指定index,column
+data = pd.DataFrame(dict,index=['A','B','C','D'],columns=['a','b','c'])
+
+
+--------字典包含  series创建
+data = pd.DataFrame({'a':pd.Series(np.arange(3)),
+                    'b':pd.Series(np.arange(3,5))})
+
+---------字典包含  字典
+dict={
+    'a':{'name':..,'age':18
+    'b':{'name':..,'age':18
+}
+
+外部字典a，b为行索引
+内部name，age为列索引
+
+
+
+-----------------通过列表构造
+---二维数组构造
+arr1 = np.arange(12).reshape(4,3)
+data = pd.DataFrame(arr1)
+
+---列表构造
+list = [{'apple':3.6,'banana':5},{'apple':6,'banana':7}]
+data = pd.DataFrame(list)
+apple,banana 为列索引
+
+---series构造
+list2 = [pd.Series(np.random.rand(3)),pd.Series(np.random.rand(2))]
+data = pd.DataFrame(list2)
+第一个为列  ，第二个为行
+3列2行
+
+

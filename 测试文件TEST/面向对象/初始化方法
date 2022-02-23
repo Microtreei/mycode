@@ -1,0 +1,19 @@
+---1.构造函数
+    class ...(Cat):
+    def ...(drink) (self,参数列表)：
+        pass
+    def ...(eat) (self,参数列表)：
+        pass
+
+    def __init__(self，name):
+        #self.name  = 'Tom'    默认初始化
+        self.name = name            构造函数
+----2.析构函数
+    def __del__(self):
+        del self             析构函数
+
+
+----3.自定义打印
+    def __str__(self):
+        return "I am Cat!!!"        #自定义打印内容
+        #print(对象)的默认是给出对象的内存地址，用__str__内置方法可自定义打印内容

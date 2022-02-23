@@ -1,0 +1,101 @@
+import matplotlib.pyplot as plt
+---基本参数
+plt.plot([x],y,[fmt],data=None,)
+1.
+plot(y)     x自动产生，看y的个数产生0，1,2,3···
+plot(x,y)   x为一个range
+2.
+使用data
+mydata={'a':range(0,25),'b':range(0,100)}
+plt.plot('a','b',mydata)
+
+使用dataframe
+mydf = pd.DataFrame(data = mydata)
+plt.plot('a','b',mydf)
+
+
+
+-----fmt
+线条样式
+o  ：圆圈
+^ :上三角
+
+plt.plot('a','b','^',mydf,color= 'white',linewidth=2，alpha)
+                                            宽度      透明度
+
+lines = plot(range,y1,range(),y2)
+for line in lines:
+    设置每个line的fmt
+    line.set_color（’r‘）
+
+
+
+------设置图标题和显示中文
+from matplotlib import fond_manager
+font = fond_manager.FontProperties(fname = 字体路径)
+plt.title('折线图'，fontproperties = font)
+
+
+----设置轴
+plt.xtick(range(20),['第%d天'%x for x in range(20)],fontproperties = font)
+plt.xlable('天数',fontproperties = font)
+plt.ylable('票房（单位万）',fontproperties = font)
+plt.title()
+plt.grid(1)     背景网格打开
+
+
+----设置marker和注释文本
+plot(x,y，marker='o',markerfacecolor='r',markersize=10，markeredgecolor)
+                        点的颜色            点大小             点边缘颜色
+
+·······添加注释
+plt.annotate("(0,0)",xy=(0,0),xytext=(-0.1,-0.1))
+            添加的文本   添加的位置    文本显示位置
+
+--存在箭头
+plt.annotate("(0,0)",xy=(0,0),xytext(-0.1,-0.1，
+arrowprops={'wide':20,'height':1,'headlength':3，'shrink'：0.6,facecolor:'r',edgecolor:}))
+
+for index,value in enumerate(y):
+    plt.annotate("(%d,%.2f)"%(index,value),xy=(index,value),xytext=(index-0.1,value-0.1)
+  enumerate      x,y一一对应
+
+
+----设置图形样式
+dpi 为分辨率
+plt.figure(figsize(10,5),facecolor='r',edgecolor=,linewidth=2,dpi=)
+
+plt.savefig(路径)     保存
+最好方式是右键图片另存为
+
+
+-----绘制多个图
+··1.
+plt.subplot(221)    2行2列第1张图
+plt.plot(x1,y1)
+plt.subplot(222)    2行2列第2张图
+plt.plot(x2,y2)
+plt.subplot(223)    2行2列第3张图
+plt.plot(x3,y3)
+plt.subplot(224)    2行2列第4张图
+plt.plot(x4,y4)
+
+··2.
+fig,axes = plt.subplots(2,2,sharex=True,shary)      sharex共用x轴
+axes1 = axes[0,0]
+axes1.plot()
+axes2 = axes[0,1]
+axes2.plot()
+axes3 = axes[1,0]
+axes3.plot()
+axes4 = axes[1,1]
+axes4.plot()
+
+设置风格
+plt.style.use('seaborn')/样式名
+
+
+
+
+
+

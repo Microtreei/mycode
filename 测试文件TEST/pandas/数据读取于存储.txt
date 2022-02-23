@@ -1,0 +1,44 @@
+读取csv
+默认分隔符为逗号，
+df = pd.read_csv('ex1.csv')
+
+默认为Tab
+df = pd.read_table('ex1.csv')
+
+df = pd.read_table('ex1.csv'，sep=',')以，分割
+
+df = pd.read_csv('ex1.csv'，header=None)     取消默认列名
+
+df = pd.read_csv('ex1.csv'，names=['a','b','c']) 自定义列名
+
+列索引变为行索引
+df = pd.read_csv('ex1.csv'，names=['a','b','c']，index_col='a')
+
+层次化
+df = pd.read_csv('ex1.csv',index_col=['key1','key2'])
+
+df = pd.read_table('ex.txt',sep='\s+')
+
+
+写
+df2.to_csv('ex.csv')
+
+
+json    读写
+import json
+将json转为python代码
+json.load(obj)  读入
+python转为json
+json.dumps(obj)
+
+
+```读取大文件
+1.
+df = pd.read_csv('ex1.csv'，header=None，chunksize=10)
+print(df.get_chunk(5))
+
+2.
+df = pd.read_csv('ex1.csv'，header=None，iterator=True)
+print(df.get_chunk(5))
+
+

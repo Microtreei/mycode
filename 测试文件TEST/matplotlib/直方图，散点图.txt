@@ -1,0 +1,34 @@
+1.plt.hist
+plt.hist(x,bins,cumulative)
+cumulative 累加
+
+
+2.散点图
+plt.scatter(x,y,s=male_data['age'],marker='^')      s为尺寸
+plt.axhline(male_heright,linewidth=1,c='r')
+plt.axvline(male_heright,linewidth=1,c='r')     垂直平均分割线
+
+3，饼图
+plt.pie(percent,label,autopct='%.2f%%',textprops={'fontpropertier':font}
+shadow=True,explode=(0,1,0,0))
+设置阴影        实现分割
+
+4.箱线图
+plt.boxplot()
+x:数据
+notch  是否展现置信区间
+sys     异常值符号
+vert    是否垂直放置
+width
+label
+meanline   和 showmeans   设为True  展现平均数
+
+
+5.雷达图
+plt.polar
+propertier = ['输出'，'KDA','发育','生存','团战']
+value=[40,90,90,50,6,40]
+theta = np.linspace(0,np.pi*2,6)        分成6等分
+plt.polar(theta,value)
+plt.xtick(theta,perproties,fontproperties=font)
+plt.fill(theta,value)

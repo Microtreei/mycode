@@ -1,0 +1,7 @@
+np.nan      缺失值  小数     所有nan不相等
+np.inf   无穷大
+
+a[np.isnan()] = 0  把所有nan变为0
+
+删除含nan的行
+--

@@ -1,0 +1,16 @@
+
+
+class Woman:
+    def __init__(self,name ,age):
+        self.name = name
+        self.__age = age            //加__age表示私有化
+    def __secret(self):     //私有方法
+        print(self.__age)       //正确
+        pass
+
+        xiaofang = Woman()
+        #print(xiaofang.__age)  错误,私有方法无法在外部访问
+        #print(xiaofang.__secret)错误
+
+        但私有方法不一定在外部一定无法访问
+        print(xiaofang._Woman__age)     可以访问

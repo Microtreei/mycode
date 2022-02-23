@@ -1,0 +1,44 @@
+1.添加axes对象
+fig  =plt.figure()
+1.
+ax1 = fig.add_subplot(211)
+2.
+ax2 = fig.add_axes([0.1,0.1,7,8])   左下点坐标  宽高
+
+2.设置axes刻度最值
+ax1.set_xlim(-2,12)     刻度在-2到12间
+
+3.添加文本text比annotate简单
+ax1.text(0,0,'hello')
+
+
+4.绘制双Y轴
+ax2 = ax1.twinx()       共享x轴
+ax2.        ....
+
+5.设置图例
+ax1.bar(x,y,label='降水量')    label为标签，用于图例
+fig.legend(prop=font)
+
+
+
+```Axis
+1.设置label位置
+ax1.bar(x,y,label='降水量')
+拿到ly的label属性
+ax1.ylabel.
+拿到y的axis属性
+ax1.yaxis
+
+ax1.yaxis.get_ticklabels()  得到刻度标签
+ax1.yaxis.get_ticklines()   得到刻度线条
+
+
+
+···避免多子图重叠,调整位置
+plt.tight_layout(w_pad,h_pad)水平和垂直间距
+plt.subplots_adjust(wspace,hspace)
+
+
+
+

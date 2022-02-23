@@ -1,0 +1,15 @@
+--1.创建对象
+        class ...(Cat):
+            def ...(drink) (self,参数列表)：
+                pass
+            def ...(eat) (self,参数列表)：
+                pass
+
+        Tom = Cat()
+        Tom.drink()
+        Tom.eat()
+
+--2.在类的外部给对象添加属性
+    Tom.name = 'tom'
+    ##在class内部添加了属性name
+

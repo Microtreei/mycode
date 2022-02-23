@@ -1,0 +1,21 @@
+import numpy as np
+numpy 中数据类型要一致
+
+---1.列表创建
+a = numpy.array([1,2,3,4])
+
+---2.numpy.arange 生成
+b = np.arange(0,21,2)
+
+---3.numpy.random 生成
+c = np.random.randomint(0,10,size=(2,3))    二行三列 范围【0,10）
+d = np.random.random(3,2)   三行二列
+
+---4.特殊函数生成
+np.zeros((3,3))
+np.ones((3,3))
+np.full((3,3),8)
+np.eye((3))
+
+
+-----查看数据类型  --dtype（）函数

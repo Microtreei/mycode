@@ -1,0 +1,142 @@
+1.处理确实数据
+pd.fillna() 填充
+pd.dropna() 丢弃
+pd.isnull()
+pd.notnull()
+
+····1.
+pd.dropna(how='all')
+丢弃全为nan的行   一行全为nan才会丢弃
+
+···2.
+pd.dropna(axis=1)
+丢弃列
+
+···3.
+pd.dropna(thresh=2)     一行有两个nan就丢弃这行
+
+
+填充
+pd.fillna(0)        填充为0
+
+pd.fillna({1：0.9，2：0.1}，inplace=)   第1列填充为0.9，第二列填充为0.1，
+inplace操作是否改变原对象
+
+df2.fillna(method='ffill'，limit=2)      将上面的值复制给下面的nan，只复制2个
+
+
+
+
+2.数据转换
+··1.移除重复数据
+data.duplicated()   检查是否重复
+返回一个dataframe 如果前面重复过为True 没有重复则为False
+
+移除重复的方法
+data.drop_duplicates()  删除了重复数据
+
+data.drop_duplicates('key1')
+按照key1列  删除重复    即只看key1这列是否重复
+
+data.drop_duplicates('key1'，keep='last')    保留最后一个出现的值
+
+
+
+···利用函数和映射进行数据转换
+meat ={'apple':fruit,
+'banana':fruit
+}
+data['class'] = data['food'].map(meat)
+根据映射取值      -------food列名下apple，banana对应fruit  再添加一个class类
+
+
+···替换值
+data.replace([-999,1000],[np.nan,0])
+data.replace({-999:np.nan,1000:0}})
+
+```重命名轴索引
+改变轴顺序
+data.reindex(index=['BeiJing','Tokyo','NewYork'])
+
+想直接改变index
+data = data.rename(index=str.title,columns=str.upper)
+data.rename(index={'Tokyo':'东京'} ,inplace=True)    //用字典方式
+
+
+```离散或和面元划分----分阶段
+ages=[1,2,32,13,345,645,233,45]
+面元bins
+bins=[18,25,35,60,100]      划分为18到25，25到35.。。。。阶段
+data = pd.cut(ages,bins)
+左开右闭的区间
+
+··data.codes
+不同阶段返回第几个阶段比如19在18到25阶段中，为第一阶段，返回1
+
+pd.value_counts(data)   返回各阶段数据个数
+data.categories     返回阶段种类
+
+data = pd.cut(ages,bins，right=False)    把右边设为开区间
+
+··自己设定面元名称
+name={'青年'，'壮年'，'老年'}
+data = pd.cut(ages,bins,labels=names)
+
+··
+data = pd.cut(ages，4，precision=2)   根据最大值最小值四等分，将其划分为等长4份，两位小数
+
+data = pd.qcut(ages，4，precision=2)  ，每阶段个数相同，划分面元
+
+
+···检查和过滤异常值
+一行中存在大于s的数
+data[np.abs(data)>3].any(1)
+
+data[np.abs(data)>3]=1      修改
+
+data.describe()     汇总查看
+
+
+···排列和随机采样
+随机排列
+sam = np.random.permutation(5)      随机排列[0,5)
+data.take(sam)
+
+df.sample(n=3)    在data中随机选3行
+df.sample(n=3，replace=True)     允许重复选择
+
+
+
+3.字符串操作
+val = 'a,b,c'
+val.split(',')  以，分割        返回列表
+
+x.strip()       去除空白符
+
+'::'.join(p)        p为列表。列表元素为字符串   以::链接
+
+c in p      判断元素是否在p里
+
+val.index[',']      返回第一个，的下标  未找到报错
+
+val.find(',')       查找，未找到返回-1
+
+val.replace(',','')     替换，  去除，
+
+
+```re表达式
+1.re.split('\s+',text1)     以空白符分割  返回列表
+2.res = re.compile(text)       编译re
+3.re.findall(res,text)
+4.re.sub(res,'9',text)      res替换成9
+5.re.match()         只看第一个
+6.re.search()       返回第一个   只找一个
+
+
+```字符串矢量操作
+data.str.contains('gmail')      查找是否含gmail
+data.str.split('@')         以@分割
+data.str.findall('@')
+data[:-2]
+
+

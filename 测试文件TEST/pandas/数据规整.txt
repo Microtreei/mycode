@@ -1,0 +1,36 @@
+1.层次化索引
+data.loc[['b','c']]     b行c行
+data.loc[:,2]       内层的索引
+frame.set_index(['c','d'])      设置层次化索引 把c列，d列做为层次
+
+
+2.数据连接  left,right为dataframe
+pd.merge(left,right，how='left'，on=['key1','key2'])     指定左连接
+指定key1，key2做链接      根据左边的dataframe进行配对，右边若无则为nan
+how  outer  :并  inner ：交     left  right    默认为inner
+
+··重复列名
+pd.merge(left,right，how='left'，on='key1'，suffixes=('_left','_right')
+添加了后缀'_left','_right'
+
+按索引链接
+pd.merge(left,right，left_on='key'，right_index=True)
+左边按key来，右边按index来   即key和index匹配
+
+
+3.数据合并
+索引合并
+1.pd.merge(left,right,how='outer',left_index=True,right_index=True)
+2.left.join(right,how='outer')      更方便
+
+上下或左右直接拼接
+pd.concat([df1，df2]) 默认外链接，axis=0
+pd.concat([df1，df2]，keys=['data1','data2'])     每个填个层次化
+
+4.重塑层次化索引
+data.stack()        把列旋转为行  变为层次化索引     变成Series    转换到最内层
+data.unstack()          相反      转换的是最内层
+
+想要操作最外层
+data.stack(0)
+data.stack('科目')
